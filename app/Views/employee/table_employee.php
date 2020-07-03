@@ -1,37 +1,33 @@
 <table class="table table-light table-hover">
-        <thead class="thead-light">
-            <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Created at</th>
+    <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Action</th>
 
-            </tr>
-        </thead>
-        <tbody>
-         <?php $i= 0; foreach($employee as $key) { $no++; ?>
+        </tr>
+    </thead>
+    <tbody>
+        <?php $i = 0;
+        foreach ($employee as $key) {
+            $i++; ?>
             <tr>
-                <td><?php echo $i; ?>td>
-               
-                <td><?php echo $key['first_name'] ?> </td>
-                <td><?php echo $key['last_name'] ?></td>
-                <td><?php echo $key['email'] ?></td>
-               
+                <td> <?php echo $i; ?></td>
+                <td> <?php echo $key['first_name'] ?> </td>
+                <td> <?php echo $key['last_name'] ?> </td>
+                <td> <?php echo $key['email'] ?> </td>
+
                 <td>
-                    <a href="{{ url('/empleados/'.$empleado->id. '/edit' ) }}" class="btn btn-primary">Edit</a>
-
+                    <button class="btn btn-warning" onclick="edit(<?php echo $key['Id']; ?>)">Edit</button>
                     |
-                    <form action="{{ url('/empleados/'.$empleado->id) }}" method="post" style="display:inline">
-                        @csrf
-                        {{ method_field('DELETE') }}
-                        <button type="submit" onclick="return confirm('Borrar?');" class="btn btn-danger">Delete</button>
+                    <button class="btn btn-danger" onclick="delete(<?php echo $key['Id']; ?>)">Delete</button>
 
-                    </form>
                 </td>
 
             </tr>
-            
+
         <?php } ?>
-        </tbody>
-    </table>
+    </tbody>
+</table>

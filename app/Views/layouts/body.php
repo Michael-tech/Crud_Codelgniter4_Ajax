@@ -67,18 +67,17 @@
         </div>
     </nav>
 
-
     <div class="container">
         <?php echo view($content) ?>
     </div>
 
-    <footer>
+
+
+    <footer style="bottom: 0; position: fixed; width: 100%;">
         <div class="environment">
 
             <p>Page rendered in {elapsed_time} seconds</p>
-
-            <p>Environment: <?= ENVIRONMENT ?></p>
-
+         
         </div>
 
         <div class="copyrights">
