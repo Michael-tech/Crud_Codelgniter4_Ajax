@@ -22,7 +22,7 @@
                 <td>
                     <button class="btn btn-warning" onclick="edit(<?php echo $key['Id']; ?>)">Edit</button>
                     |
-                    <button class="btn btn-danger" onclick="delete(<?php echo $key['Id']; ?>)">Delete</button>
+                    <button class="btn btn-danger" onclick="deleteemployee(<?php echo $key['Id']; ?>)">Delete</button>
 
                 </td>
 
