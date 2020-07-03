@@ -8,7 +8,27 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style {csp-style-nonce}>
+		
 
+		footer {
+			background-color: rgba(221, 72, 20, .8);
+			text-align: center;
+		}
+
+		footer .environment {
+			color: rgba(255, 255, 255, 1);
+			padding: .25rem 1.75rem;
+		}
+
+		footer .copyrights {
+			background-color: rgba(62, 62, 62, 1);
+			color: rgba(200, 200, 200, 1);
+			padding: .25rem 1.75rem;
+		}
+
+	
+	</style>
     <title> <?php echo $title ?> </title>
 </head>
 
@@ -53,6 +73,23 @@
     <div class="container">
         <?php echo view($content) ?>
     </div>
+
+    <footer>
+		<div class="environment">
+
+			<p>Page rendered in {elapsed_time} seconds</p>
+
+			<p>Environment: <?= ENVIRONMENT ?></p>
+
+		</div>
+
+		<div class="copyrights">
+
+			<p>&copy; <?= date('Y') ?> Michael Zaquinaula, Junior Developer</p>
+
+		</div>
+
+	</footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
